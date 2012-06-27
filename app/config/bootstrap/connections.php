@@ -69,5 +69,5 @@ use lithium\data\Connections;
 // 	'encoding' => 'UTF-8'
 // ));
 // MongoDB Connection
-Connections::add('default', array('type' =>  'MongoDb', 'database' => 'kcal', 'host' => 'localhost'));
+Connections::add('default', array('type' =>  'MongoDb', 'database' => 'mongodb'/*, 'host' => 'localhost'*/));
 ?>
