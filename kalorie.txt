@@ -1,0 +1,119 @@
+Actimel, mleko jogurtowe 	88 	2,7 	1,5 	16
+Advokat, likier 	280 	4,4 	6 	28,4
+Agrest 	 60 	1,2 	0,9 	11,8
+Ananas 	 33 	0,2 	0 	7,8
+Arbuz 	15 	0,3 	0,1 	3,2
+Awokado 	160 	2 	15 	7
+Baleron gotowany 	246 	15,1 	20,2 	0,9
+Banan 	 74 	0,9 	0,3 	17
+Baranina, łopatka 	 287 	15,6 	25 	0
+Baranina, mięso bez kości 	234 	18 	18 	0
+Baranina, mięso z kością 	238 	16,4 	26,4 	0
+Baranina, udziec 	234 	18 	18 	0
+Baton Bounty 	470 	4,2 	25,2 	56,7
+Baton Knoppers 	528 	8 	32 	52
+Baton Mars 	454 	3,6 	18,2 	68,9
+Baton Milky Way 	447 	3,6 	16,2 	71,8
+Baton Nestle Lion 	491 	7,4 	22,7 	64,1
+Baton Snickers 	509 	9,7 	28,9 	52,6
+Baton Twix 	487 	5,3 	23,2 	64,2
+Bażant tuszka 	108 	22,3 	1,9 	0,5
+Benecol, margaryna 	540 	0 	60 	0
+Białko jaja kurzego 	46 	10,8 	0 	0,8
+Bigos 	126 	5,6 	9,8 	3,8
+Biszkopty, ciastka 	400 	9,3 	7,5 	73,8
+Bobo Frut jabłkowy 	42 	0,1 	0 	10,5
+Boczek wieprzowy 	517 	10,1 	53 	0
+Boćwina 	35 	2,1 	0,5 	5,5
+Borowik suszony 	342 	29 	10 	34
+Borowik świeży 	36 	5,4 	0,4 	2,7
+Bób 	88 	7,1 	0,4 	14
+Brando, landrynki 	390 	0 	0 	96,6
+Brandy 	225 	0 	0 	0
+Brokuły 	37 	3,3 	0,2 	5,5
+Brukselka 	58 	4,7 	0,5 	8,7
+Brzoskwinia 	59 	1,3 	0,7 	11,9
+Brzoskwinie, konserwa, odsączone 	82 	0,5 	0,1 	19,8
+Budyń czekoladowy 	95 	2,8 	2,1 	16,2
+Budyń waniliowy 	91 	2,5 	2 	15,7
+Bułka grahamka 	198 	6,5 	1,3 	40
+Bułka kajzerka 	226 	5,8 	2,6 	44,8
+Bułka maślana 	212 	5,9 	4,5 	47
+Bułka tarta 	363 	10,4 	2,1 	75,6
+Bułka wrocławska 	226 	5,8 	2,6 	44,8
+Bułka zwykła 	217 	5,8 	1,1 	45,9
+Buraki 	46 	1,8 	0,1 	9,8
+Cappuccino śmietankowe, proszek 	385 	5,3 	9,9 	68,7
+Cebula 	37 	1,4 	0,4 	6,9
+Cielęcina, łopatka 	105 	19,9 	2,8 	0
+Cielęcina, mięso bez kości 	108 	19,9 	3,1 	0
+Cielęcina, mięso z kością 	151 	19,7 	8 	0
+Cielęcina, udziec 	108 	19,9 	3,1 	0
+Chałka 	252 	5,8 	4,4 	47
+Chałwa 	531 	8 	31 	55
+Cheeseburger McDonald 	278 	12,6 	11,8 	30,3
+Chipsy paprykowe 	586 	6 	40 	50,4
+Cherry Brandy, alkohol 	265 	0 	0 	32,4
+Chleb chrupki 	372 	8,7 	2,4 	78,9
+Chleb pszenno-żytni 	203 	4,6 	1,1 	43,7
+Chleb pszenny razowy 	198 	6,5 	1,3 	40
+Chleb pszenny zwykły 	217 	5,8 	1,1 	45,9
+Chleb pumpernikiel 	241 	4,9 	1,7 	51,1
+Chleb żytni razowy 	196 	4,7 	1,2 	41,5
+Chleb żytni zwykły 	194 	3,2 	0,9 	43,4
+Chrupki kukurydziane 	378 	8,9 	3 	78,9
+Coca Cola, napój 	42 	0 	0 	10,4
+Coca Cola light, napój 	0,24 	0 	0 	0
+Cukier 	399 	0 	0 	99,8
+Cukierki owocowe 	374 	0,3 	0,5 	92
+Cukinia 	18 	1 	0,2 	3
+Curacao, likier 	319 	0 	0 	27,6
+Cykoria 	25 	1,7 	0,2 	4,1
+Cytryna 	46 	0,8 	0,5 	9,5
+Czarne jagody 	61 	1,1 	0,9 	12,2
+Czekolada biała 	544 	4,5 	30,3 	63,2
+Czekolada deserowa 	537 	5,3 	28,9 	64
+Czekolada gorzka 	505 	8,2 	34,9 	38,7
+Czekolada mleczna 	526 	8 	30,7 	54,2
+Czekolada nadziewana 	449 	3,9 	17,6 	68,8
+Czekolada z orzechami 	547 	7,6 	33,9 	52,7
+Czekoladka Kinder Niespodzianka 	560 	9,5 	35,3 	51,5
+Czekoladki Ferrero Rocher 	562 	9 	40,2 	41
+Czekoladki Golden Nut 	576 	6 	39 	50,2
+Czekoladki Mon Cheri 	421 	3,2 	19,7 	57,8
+Czekoladki Raffaello 	600 	9,7 	46,6 	35,4
+Czekoladki Toffifee 	535 	6 	31 	58
+Czereśnie 	55 	1 	0,5 	11,6
+Czosnek 	144 	6,2 	0,5 	28,8
+Daktyle suszone  	316 	2,2 	0,6 	75,4
+Danonki, jogurt do picia 	87 	2,8 	1,6 	15,4
+Delicje, ciastka 	376 	3,5 	8,4 	71,5
+Delma, margaryna 	496 	0 	55 	0,2
+Deser czekoladowy Monte 	195 	2,8 	13,3 	15,9
+Dorsz świeży 	69 	16,5 	0,3 	0
+Dorsz wędzony 	93 	22,1 	0,5 	0
+Drażetki Tic Tac 	390 	0 	0 	97,5
+Drożdże piekarskie 	132 	11,3 	2 	14,5
+Drożdżówka 	321 	6 	9 	50
+Dynia 	39 	1,3 	0,3 	7,7
+Dynia, pestki 	582 	24,5 	45,8 	18
+Dżem niskosłodzony 	163 	0,5 	0 	63
+Dżem wysokosłodzony 	257 	0,5 	0,2 	63,4
+Eklerka, ciastko  	301 	5 	9 	50
+Endywia 	17 	1,8 	0,6 	1
+Familijne, wafle 	533 	7,1 	29,6 	59,5
+Fasola biała, konserwa 	87 	4,5 	0,2 	16,7
+Fasola biała, ziarno suche  	346 	21,4 	1,6 	61,6
+Fasola czerwona Red Kidney, konserwa 	104 	6,9 	0,6 	17,8
+Fasola szparagowa 	42 	2,4 	0,2 	7,6
+Fasola szparagowa, konserwa 	26 	1,5 	0,2 	4,5
+Fasolka po bretońsku 	158 	6,1 	8,7 	13,7
+Ferrero Rocher, czekoladki 	562 	9 	40,2 	41
+Figi suszone 	300 	4 	1,2 	68,4
+Flaki wołowe, suche 	84 	16 	2,2 	0
+Flaki wołowe na rosole 	71 	4,6 	4,2 	3,7
+Flądra świeża 	84 	16,5 	1,8 	0
+Flora, margaryna 	328 	0,1 	35 	3,2
+Frytki mrożone 	172 	2,5 	5,5 	28
+Frytki z frytownicy 	252 	3 	12 	33
+Frytki z piekarnika 	231 	3,5 	5 	37

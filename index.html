@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+		<style>
+			#wrapper			
+			{
+				margin: 50px auto;
+				border: 1px solid #000;
+				width: 800px;
+				height: 600px;
+				padding:0;
+			}
+	
+			h1
+			{
+				text-align: center;
+				width:100%;
+				background-color: #88bdde;
+				color: #214a63;
+			}
+
+			#profile
+			{
+				font-family: monospace;
+				width: 200px;
+				border: 0px solid #000;
+				margin: 50px auto;
+				font-size: 12px;
+				line-height: 10px;
+				text-align:left;
+			}
+			
+			#items ul
+			{
+				list-style-type: none;
+			}
+			
+			#selected
+			{
+				width: 300px;
+				height: 100px;
+				background-color: #aaa;
+			}
+
+		</style>
+		<link rel="stylesheet" href="css/tinyscrollbar.css" type="text/css" media="screen"/>
+		<script src="js/jquery-1.6.2.min.js"></script>
+		<script src="js/jquery.tinyscrollbar.min.js"></script>
+		<script src="js/dc.js"></script>
+	</head>
+	<body>
+		<div id="status">status div</div>
+		
+		<div>
+			<select id="viewer">
+				<option value="0">brak elementu</option>
+			</select>
+		</div>
+		
+		<div id="items">
+			<div class="scrollbar">
+				<div class="track">
+					<div class="thumb">
+						<div class="end"></div>
+					</div>
+				</div>
+			</div>
+	
+			<div class="viewport">
+				<div class="overview">
+					<ul id="item_list">
+					</ul>                          
+				</div>
+			</div>
+		</div>
+		
+		<div id="selected">
+			<ul>
+			</ul>
+		</div>
+		
+		<input id="hit" type="button" value="asd"/>
+		
+		<div id="profile">
+		</div>
+	</body>
+</html>
