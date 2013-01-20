@@ -9,7 +9,6 @@ class InfoController extends \lithium\action\Controller {
 	public function index() {
 		
 		
-		
 	return 0;
 	}
 	

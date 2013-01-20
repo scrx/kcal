@@ -8,14 +8,10 @@
 ?>
 <!doctype html>
 
-
-
 <html>
-	
-	
 	<!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 
 <head>
 	<?php echo $this->html->charset();?>
@@ -34,7 +30,6 @@
 <body class="app">
 	<div id="container">
 		<div id="header">
-			<h3>Kcal Application 	Powered by <?php echo $this->html->link('Lithium', 'http://lithify.me/'); ?>.</h3>
 								
 			<!--	<?=$this->html->link('Dodaj Żarło', 'Meal::add')?> 
 			<!--	<?= $this->html->link('Wywal całe Żarło', 'Meal::removeAll')?> -->										

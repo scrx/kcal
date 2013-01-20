@@ -9,7 +9,6 @@ class MealController extends \lithium\action\Controller {
 	
 	  
     public function index() {
-    
     	$meals = Meals::all();
 		
 

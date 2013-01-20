@@ -27,22 +27,17 @@ use lithium\security\Auth;
 
 /**
  * The authentification config is: the credentials will be submitted by a form, 
-matching the attributes username and password of the model Users, 
-under the session id called member .
+ * matching the attributes username and password of the model Users, 
+ * under the session id called member .
  */
 Session::config(array(
 	'cookie' => array('adapter' => 'Cookie'),
 	'default' => array('adapter' => 'Php')
 ));
 
+
 Auth::config(array(
-    'member' => array(
-        'adapter' => 'Form',
-        'model'   => 'Users',
-        'fields'  => array('username', 'password'),
-    ),
-	'default' => array('adapter' => 'Form')
-	
+    'default' => array('adapter' => 'Form')
 ));
 
 
@@ -64,14 +59,14 @@ Auth::config(array(
  * @see lithium\action\Request::$data
  * @see lithium\security\Auth
  */
-// use lithium\security\Auth;
+ //use lithium\security\Auth;
 
-// Auth::config(array(
-// 	'default' => array(
-// 		'adapter' => 'Form',
-// 		'model' => 'Users',
-// 		'fields' => array('username', 'password')
-// 	)
-// ));
+Auth::config(array(
+	'default' => array(
+		'adapter' => 'Form',
+		'model' => 'Users',
+		'fields' => array('username', 'password')
+	)
+));
 
 ?>

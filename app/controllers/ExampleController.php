@@ -9,9 +9,17 @@ class ExampleController extends \lithium\action\Controller {
 	public function test() {	
 
 		//if not connected redirect to /index/index
-		if(!Auth::check('member', $this->request)) {
-			return $this->redirect('Index::index');	
+		if(Auth::check('default', $this->request)) {
+
+			// ok, authenticate
+
+			Auth::set('default','Siema zolciu');
+
+			//return $this->redirect('Index::index');	
+		} else {
+			echo 'nie ma auth';
 		}
+
 	}
 }
 ?>

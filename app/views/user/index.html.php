@@ -7,7 +7,7 @@
 <?php if($users->count()) { ?>
 <ul>
 	<?php foreach($users as $user) { ?>
-	<li><?=$user->name?></li>
+	<li><?=$user->username?></li>
 	<?php } ?>
 </ul>
 
@@ -16,7 +16,7 @@
 
 			Menu User
 				<?=$this->html->link('Index user', 'User::index')?> 
-				<?=$this->html->link('Dodaj user', 'User::signup')?> 
+				<?=$this->html->link('Dodaj user', 'User::add')?> 
 				<?=$this->html->link('Login', 'User::login')?>
 				<?=$this->html->link('UserHistoryData', 'UserHistoryData::index')?>
 				<?=$this->html->link('Dodaj dane historyczne :P ', 'UserHistoryData::add')?>
