@@ -1,8 +1,8 @@
-<p><?=$this->html->link('Zaloguj', 'User::login')?></p>
+<p><?=$this->html->link('Wyloguj', 'User::logout')?></p>
 
 <h2>User List</h2>
 
-<p><?=$this->html->link('Sign Up', 'User::signup')?></p>
+<p><?=$this->html->link('Sign Up', 'User::add')?></p>
 
 <?php if($users->count()) { ?>
 <ul>

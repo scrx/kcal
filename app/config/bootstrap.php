@@ -95,6 +95,12 @@ Users::applyFilter('save', function($self, $params, $chain) {
 });
 
 
+ 
+/**
+ * Add the application.  You can pass a `'path'` key here if this bootstrap file is outside of
+ * your main application, but generally you should not need to change any settings.
+ */
+
 
 // require __DIR__ . '/bootstrap/console.php';
  ini_set("display_errors", 1);

@@ -43,7 +43,7 @@ class UserController extends \lithium\action\Controller {
 
 	public function logout() {
 		Auth::clear('default');
-		return $this->redirect('Index::index');
+		return $this->redirect('/');
 	}
 
 }
