@@ -36,6 +36,3 @@ class Servings extends \lithium\data\Model {
 }
 
 ?>
-/*
-		
-*/

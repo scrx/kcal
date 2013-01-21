@@ -17,7 +17,7 @@
 	<?php echo $this->html->charset();?>
 	<title>Kcal Application > <?php echo $this->title(); ?></title>
 	
-	<?php echo $this->html->style(array('debug', 'lithium','kcal_style','dateinput')); ?>
+	<?php echo $this->html->style(array('debug', 'lithium','kcal_style','dateinput','bootstrap')); ?>
 	
 	<?php echo $this->html->script('jquery-1.7.2.js'); ?>
 	<?php echo $this->html->script('jquery.tools.min.js'); ?>
@@ -28,22 +28,18 @@
 	<!--<script src="js/jquery-1.6.2.min.js"></script> -->
 </head>
 <body class="app">
+	<div id="top_header">
+		<div id="menu">
+			<ul class="nav nav-pills">
+				<li class="disabled"> <?=$this->html->link('Meals', 'Serving::index')?>	</li>
+				<li class="disabled"> <?=$this->html->link('Add Meal', 'Serving::add')?></li>
+				<li class="disabled"> <?=$this->html->link('Users', 'User::index')?></li>
+				<li class="disabled"> <?=$this->html->link('Add User', 'User::add')?></li>
+			</ul>
+		</div>
+	</div>
 	<div id="container">
 		<div id="header">
-								
-			<!--	<?=$this->html->link('Dodaj Żarło', 'Meal::add')?> 
-			<!--	<?= $this->html->link('Wywal całe Żarło', 'Meal::removeAll')?> -->										
-			<nav>
-		        <ul>
-		                <li> <?=$this->html->link('Meals', 'Meal::index')?> </li>
-		                <li> <?=$this->html->link('Add Meal', 'Meal::add')?> </li>
-		                <li> <?=$this->html->link('Index user', 'User::index')?> </li>
-		                <li> <?=$this->html->link('Dev', 'Dev::index')?> </li>
-		                <li> <?=$this->html->link('Serving', 'Serving::index')?> </li>
-		                
-		                <li><a href="">Contact</a></li>
-		        </ul>
-</nav>
 
 		</div>
 		

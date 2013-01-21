@@ -7,22 +7,19 @@ use lithium\security\Auth;
 use lithium\storage\Session;
 
 class ServingController extends \lithium\action\Controller {
+
+	public function index() {
+
+		$servings = Servings::all();
+		return compact('servings');
+
+	}
 	
-	 
-	 
-	  
-    public function index() {
-    	//$this->html->script('jquery-1.7.2.js');
-    	$servings = Servings::all();
-		
-    	return compact('servings');
-    }
-    
 	public function add() {
-    	$success = false;
-		
+
+		$success = false;
 		$meals = Meals::all();
-		
+		$meals_array = array();
 		//$meals = compact($meals);
 		//foreach($meals as $meal => $key){
 		//	print_r($meal[$key]);
@@ -42,12 +39,14 @@ class ServingController extends \lithium\action\Controller {
 		//	print_r($mil);
 		//}
 		
-    if ($this->request->data) {
-        $serving = Servings::create($this->request->data);
-        $success = $serving->save();
+
+		
+	if ($this->request->data) {
+		$serving = Servings::create($this->request->data);
+		$success = $serving->save();
 		return $this->redirect('Serving::index');	
-    }
-    return compact('success','meals_array');
+	}
+	return compact('success','meals_array');
 }
 	
 	

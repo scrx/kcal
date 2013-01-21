@@ -21,7 +21,6 @@
 		
 		
 	</tr>
-  
 
 <?php endforeach; ?>
 
