@@ -2,7 +2,7 @@
 namespace app\models;
 use lithium\util\Validator;
 
-class Meals extends \lithium\data\Model {
+class Foods extends \lithium\data\Model {
 
 	protected $_schema = array(
 		'_id'		=>	array('type' => 'id'),

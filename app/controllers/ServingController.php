@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 use app\models\Servings;
-use app\models\Meals;
+use app\models\Foods;
 use lithium\security\Auth;
 use lithium\storage\Session;
 
@@ -18,7 +18,7 @@ class ServingController extends \lithium\action\Controller {
 	public function add() {
 
 		$success = false;
-		$meals = Meals::all();
+		$meals = Foods::all();
 		$meals_array = array();
 		//$meals = compact($meals);
 		//foreach($meals as $meal => $key){
@@ -51,7 +51,7 @@ class ServingController extends \lithium\action\Controller {
 	
 	
 	public function removeAll(){
-		$rm = Meals::remove();
+		$rm = Foods::remove();
 		return $this->redirect('Serving::index');	
 	}
 		

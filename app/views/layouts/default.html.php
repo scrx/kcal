@@ -21,26 +21,53 @@
 	
 	<?php echo $this->html->script('jquery-1.7.2.js'); ?>
 	<?php echo $this->html->script('jquery.tools.min.js'); ?>
+	<?php echo $this->html->script('js/bootstrap.js'); ?>
 	
 	
 	<?php //echo $this->scripts(); ?>
 	<?php //echo $this->html->link('Icon', null, array('type' => 'icon')); ?>
 	<!--<script src="js/jquery-1.6.2.min.js"></script> -->
 </head>
-<body class="app">
-	<div id="top_header">
-		<div id="menu">
-			<ul class="nav nav-pills">
-				<li class="disabled"> <?=$this->html->link('Meals', 'Serving::index')?>	</li>
-				<li class="disabled"> <?=$this->html->link('Add Meal', 'Serving::add')?></li>
-				<li class="disabled"> <?=$this->html->link('Users', 'User::index')?></li>
-				<li class="disabled"> <?=$this->html->link('Add User', 'User::add')?></li>
-			</ul>
-		</div>
-	</div>
-	<div id="container">
-		<div id="header">
 
+
+
+<body class="app" style='padding-top:40px'>
+
+	<div id="container">
+		
+		<div id="header">
+			<div class="navbar navbar-inverse navbar-fixed-top">
+			  <div class="navbar-inner ">
+			    <a class="brand" href="#">Kcal App</a>
+			    <ul class="nav">
+			      <li class="active"><a href="#">Home</a></li>
+			      <li><?=$this->html->link('History', 'UserHistoryData::index') ?></li>
+			  	  <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Food <b class="caret"></b></a>                                           
+						<ul class="dropdown-menu">
+						  <li> <?=$this->html->link('List', 'Food::index')?></li>
+						  <li> <?=$this->html->link('Add', 'Food::add') ?></li>
+						  	UserHistoryData
+						 
+						<!--  <li class="divider"></li>
+						   <li><?=$this->html->link('Logout', 'User::logout') ?></li> -->
+						</ul>
+			      </li>    
+				  <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>                                           
+						<ul class="dropdown-menu">
+						  <li> <?=$this->html->link('Users',    'User::index')?></li>
+						  <li> <?=$this->html->link('Add User', 'User::add') ?></li>
+						  <li> <?=$this->html->link('Login',    'User::login') ?></li>
+						 
+						  <li class="divider"></li>
+						   <li><?=$this->html->link('Logout', 'User::logout') ?></li>
+
+						</ul>
+			      </li>
+			    </ul>
+			  </div>
+			</div>
 		</div>
 		
 		<div id="content">

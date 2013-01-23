@@ -18,6 +18,7 @@ Height: 6'2"
 		'_id'		=>	array('type' => 'id'),
 		'user_id'	=>	array('type' => 'string', 'null' => false),
 		'weight'	=>	array('type' => 'string', 'null' => false),
+		'body_fat'	=>	array('type' => 'string', 'null' => false),
 		'height'	=>	array('type' => 'string', 'null' => false),
 		'waist'		=>	array('type' => 'string', 'null' => false),
 		'chest'		=>	array('type' => 'string', 'null' => false),
