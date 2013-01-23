@@ -9,6 +9,8 @@ use lithium\storage\Session;
 
 class UserController extends \lithium\action\Controller {
 
+	 public $publicActions = array('login');
+
 	 public function index() {
 
 		if (!Auth::check('default')) {

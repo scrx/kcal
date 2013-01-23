@@ -69,4 +69,24 @@ Auth::config(array(
 	)
 ));
 
+use lithium\action\Dispatcher;
+use lithium\action\Response;
+
+Dispatcher::applyFilter('_callable', function($self, $params, $chain) {
+
+	$ctrl    = $chain->next($self, $params, $chain);
+    $request = isset($params['request']) ? $params['request'] : null;
+    $action  = $params['params']['action'];
+
+    if (Auth::check('default')) {
+        return $ctrl;
+    }
+    if (isset($ctrl->publicActions) && in_array($action, $ctrl->publicActions)) {
+        return $ctrl;
+    }
+    return function() use ($request) {
+        return new Response(compact('request') + array('location' => 'User::login'));
+    };
+});
+
 ?>
