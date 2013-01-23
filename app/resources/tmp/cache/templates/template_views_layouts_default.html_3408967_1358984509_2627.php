@@ -43,27 +43,27 @@
 			      <li class="active">
 			      	<a href="#">Home</a>	
 			      </li>
-			      <li><?=$this->html->link('User History', 'UserHistoryData::index') ?></li>
+			      <li><?php echo $this->html->link('User History', 'UserHistoryData::index'); ?></li>
 			  	  <li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Food <b class="caret"></b></a>                                           
 						<ul class="dropdown-menu">
-							<li> <?=$this->html->link('List', 'Food::index')?></li>
-							<li> <?=$this->html->link('Add', 'Food::add') ?></li>
+							<li> <?php echo $this->html->link('List', 'Food::index'); ?></li>
+							<li> <?php echo $this->html->link('Add', 'Food::add'); ?></li>
 						</ul>
 			      </li>   			       
 					<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>                                           
 						<ul class="dropdown-menu">
-							<li> <?=$this->html->link('Users',    'User::index')?></li>
-							<li> <?=$this->html->link('Add User', 'User::add') ?></li>
-							<li> <?=$this->html->link('Login',    'User::login') ?></li>						 
+							<li> <?php echo $this->html->link('Users',    'User::index'); ?></li>
+							<li> <?php echo $this->html->link('Add User', 'User::add'); ?></li>
+							<li> <?php echo $this->html->link('Login',    'User::login'); ?></li>						 
 							<li class="divider"></li>
-							<li><?=$this->html->link('Logout', 'User::logout') ?></li>
+							<li><?php echo $this->html->link('Logout', 'User::logout'); ?></li>
 						</ul>
 			      </li>
 			      </ul>
 			      <ul class='nav pull-right'>
-					<li>  <a href='#'> Zalogowany jako : <?=$this->login->fullName(); ?> </a> </li>
+					<li>  <a href='#'> Zalogowany jako : <?php echo $this->login->fullName(); ?> </a> </li>
 					</ul>
 			    
 			
@@ -72,7 +72,7 @@
 			  </div>
 			</div>
 		</div>
-		<?=$this->login->fullName(); ?>
+		<?php echo $this->login->fullName(); ?>
 		<div id="content">
 			<?php echo $this->content(); ?>
 		</div>
