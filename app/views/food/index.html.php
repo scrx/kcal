@@ -24,3 +24,5 @@
 <?php endforeach; ?>
 
 </table>
+
+<?=$this->Paginator->paginate(); ?>

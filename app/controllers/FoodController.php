@@ -5,13 +5,30 @@ use app\models\Servings;
 use app\models\Foods;
 use lithium\security\Auth;
 use lithium\storage\Session;
+use app\extensions\helpers\Paginator;
 
 class FoodController extends \lithium\action\Controller {
 
 	public function index() {
 
-		$meals = Foods::all();
-		return compact('meals');
+		$total = Foods::count();
+
+		$page = 1;
+
+		foreach ($this->request->params['args'] as $arg) {
+			list($name,$value) = explode(":", $arg);
+			if ( $name == 'page') {
+				$page = $value; 
+			}
+		} 
+		
+		$limit = 20;
+
+    	$order = array('created' => 'DESC');
+
+    	$meals = Foods::all(compact('order','limit','page'));
+
+		return compact('meals', 'total', 'page', 'limit');
 
 	}
 	public function add() {
