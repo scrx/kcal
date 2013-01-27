@@ -63,7 +63,7 @@
 			      </li>
 			      </ul>
 			      <ul class='nav pull-right'>
-					<li>  <a href='#'> Zalogowany jako : <?=$this->login->fullName(); ?> </a> </li>
+					<li>   <?= $this->html->link("Zalogowany jako: ".$this->login->fullName(), 'User::profile') ?> </li>
 					</ul>
 			    
 			
@@ -72,7 +72,6 @@
 			  </div>
 			</div>
 		</div>
-		<?=$this->login->fullName(); ?>
 		<div id="content">
 			<?php echo $this->content(); ?>
 		</div>

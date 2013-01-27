@@ -49,5 +49,9 @@ class UserController extends \lithium\action\Controller {
 		return $this->redirect('/');
 	}
 
+	public function profile() {
+		
+	}
+
 }
 ?>
