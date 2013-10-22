@@ -10,21 +10,12 @@ class Servings extends \lithium\data\Model {
 	protected $_schema = array(
 		'_id'		=>	array('type' => 'id'),
 		'user_id'	=>	array('type' => 'string', 'null' => false),
-		'food_id'   =>  array('type' => 'string'),
-		'weight'	=> array('type' => 'int'),
-		// mozna rozszerzyc o cene ale czy ma to sens?
-		
-		//'weight'	=>	array('type' => 'string', 'null' => false),
-		//'height'	=>	array('type' => 'string', 'null' => false),
-		//'waist'		=>	array('type' => 'string', 'null' => false),
-		//'chest'		=>	array('type' => 'string', 'null' => false),
-		//'neck'		=>	array('type' => 'string', 'null' => false),
-		//'hips'		=>	array('type' => 'string', 'null' => false),
-		//'biceps'	=>	array('type' => 'string', 'null' => false),		
+		'food_id'   =>  array('type' => 'int'),
+		'weight'	=> array('type' => 'int'),	
 		'cost'	=>	array('type' => 'string', 'null' => false),
 		'date_when'	=>	array('type' => 'string', 'null' => false),
-		'updated'	=>	array('type' => 'datetime', 'null' => false),
-		'created'	=>	array('type' => 'datetime', 'null' => false),
+		'updated'	=>	array('type' => 'date', 'null' => false),
+		'created'	=>	array('type' => 'date', 'null' => false),
 	);
 
 	protected $_meta = array(

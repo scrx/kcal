@@ -63,9 +63,11 @@ define('LITHIUM_APP_PATH', dirname(dirname(__DIR__)));
  * set this to a shared path on your server.
  */
 
-define('LITHIUM_LIBRARY_PATH', '../../../');
+define('LITHIUM_LIBRARY_PATH', '/home/scx/www/kcal');
+//die(LITHIUM_LIBRARY_PATH);
+//exit();
 //define('LITHIUM_LIBRARY_PATH', '/home/zoltax/pr/');
-
+//define('LITHIUM_LIBRARY_PATH', dirname(__DIR__) . '/libraries');
 
 
 /**

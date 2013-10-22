@@ -1,16 +1,17 @@
+<!-- Adding food user data history view -->
 
-
-
+<h5> Wprowadzanie danych użytkownika </h5>
 <?=$this->form->create(); ?>
- 	<?=$this->form->field(array('weight' => 'Waga'));?>
- 	<?=$this->form->field(array('height' => 'Wzrost'));?>
- 	<?=$this->form->field(array('waist' => 'Pas'));?>
- 	<?=$this->form->field(array('chest' => 'Klatka'));?>
- 	<?=$this->form->field(array('neck' => 'Szyja'));?>   
- 	<?=$this->form->field(array('hips' => 'Biodra'));?>   
- 	<?=$this->form->field(array('biceps' => 'Biceps'));?>   
- 	<?=$this->form->field(array('date_when' => 'Data'));?>   
-    <?=$this->form->submit('Dodaj'); ?>
+	<h6> Wprowadź swoje dane </h6>
+ 	<?=$this->form->field('weight',array('label'=>false,'div' => false,'placeholder'=>'Waga','class'=>'first-topped-border'));?>
+ 	<?=$this->form->field('height',array('label'=>false,'div' => false,'placeholder'=>'Wzrost'));?>
+ 	<?=$this->form->field('waist',array('label'=>false,'div' => false,'placeholder'=>'Pas'));?>
+ 	<?=$this->form->field('chest',array('label'=>false,'div' => false,'placeholder'=>'Klatka'));?>
+ 	<?=$this->form->field('neck',array('label'=>false,'div' => false,'placeholder'=>'Szyja'));?>  
+ 	<?=$this->form->field('hips',array('label'=>false,'div' => false,'placeholder'=>'Biodra'));?>   
+ 	<?=$this->form->field('biceps',array('label'=>false,'div' => false,'placeholder'=>'Biceps'));?>   
+ 	<?=$this->form->field('date_when',array('label'=>false,'div' => false,'placeholder'=>'Data'));?>   
+    <?=$this->form->submit('Zapisz'); ?>
 <?=$this->form->end(); ?>
 <?php
 /*

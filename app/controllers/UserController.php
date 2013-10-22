@@ -9,7 +9,7 @@ use lithium\storage\Session;
 
 class UserController extends \lithium\action\Controller {
 
-	 public $publicActions = array('login');
+	 public $publicActions = array('login','add');
 
 	 public function index() {
 
@@ -35,8 +35,10 @@ class UserController extends \lithium\action\Controller {
 		if (! Auth::check('default')) {
 
 			if ($this->request->data && Auth::check('default', $this->request)) {
-				var_dump('yeah');
-				return $this->redirect('/');
+				//var_dump('yeah');
+				//die('yea');	
+				//return $this->redirect('/');
+				return $this->redirect('User::index');
 			}
 			// Handle failed authentication attempts
 		}  else {

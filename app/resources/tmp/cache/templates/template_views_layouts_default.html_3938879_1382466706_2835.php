@@ -18,6 +18,9 @@
 	<title>Kcal Application > <?php echo $this->title(); ?></title>
 	
 	<?php echo $this->html->style(array('debug', 'lithium','kcal_style','dateinput','bootstrap')); ?>
+
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	
 	<?php echo $this->html->script('jquery-1.7.2.js'); ?>
 	<?php echo $this->html->script('jquery.tools.min.js'); ?>
@@ -63,7 +66,7 @@
 			      </li>
 			      </ul>
 			      <ul class='nav pull-right'>
-					<li>  <a href='#'> Zalogowany jako : <?php echo $this->login->fullName(); ?> </a> </li>
+					<li>   <?php echo $this->html->link("Zalogowany jako: ".$this->login->fullName(), 'User::profile'); ?> </li>
 					</ul>
 			    
 			
@@ -72,7 +75,6 @@
 			  </div>
 			</div>
 		</div>
-		<?php echo $this->login->fullName(); ?>
 		<div id="content">
 			<?php echo $this->content(); ?>
 		</div>

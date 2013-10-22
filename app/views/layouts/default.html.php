@@ -18,6 +18,9 @@
 	<title>Kcal Application > <?php echo $this->title(); ?></title>
 	
 	<?php echo $this->html->style(array('debug', 'lithium','kcal_style','dateinput','bootstrap')); ?>
+
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	
 	<?php echo $this->html->script('jquery-1.7.2.js'); ?>
 	<?php echo $this->html->script('jquery.tools.min.js'); ?>
