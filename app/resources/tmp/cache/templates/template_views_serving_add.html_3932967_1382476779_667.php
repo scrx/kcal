@@ -6,7 +6,7 @@
     'id' => 'Colors', 'value' => 2) */ ); ?>
  	<?php echo $this->form->field('weight',array('label'=>false,'placeholder' => 'Waga/ Ilość','class'=>'first-topped-border')); ?>
  	<?php echo $this->form->field('cost',array('label'=>false,'placeholder' => 'Koszt')); ?>
- 	<?php echo $this->form->field('datewhen',array('placeholder' => 'Data','label'=>false,'class'=>'date','id'=>'date')); ?>
+ 	<?php echo $this->form->field('date_when',array('placeholder' => 'Data','label'=>false,'class'=>'date','id'=>'date')); ?>
     <?php echo $this->form->submit('Dodaj'); ?>
 <?php echo $this->form->end(); ?>
 

@@ -9,12 +9,12 @@ class Servings extends \lithium\data\Model {
 	
 	protected $_schema = array(
 		'_id'		=>	array('type' => 'id'),
-		'user_id'	=>	array('type' => 'string', 'null' => false),
+		'user_id'	=>	array('type' => 'int', 'null' => false),
 		'food_id'   =>  array('type' => 'int'),
 		'weight'	=> array('type' => 'int'),	
 		'cost'	=>	array('type' => 'string', 'null' => false),
 		'date_when'	=>	array('type' => 'string', 'null' => false),
-		'updated'	=>	array('type' => 'date', 'null' => false),
+		'modified'	=>	array('type' => 'date', 'null' => false),
 		'created'	=>	array('type' => 'date', 'null' => false),
 	);
 
