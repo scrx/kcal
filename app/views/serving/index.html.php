@@ -26,5 +26,5 @@
 
 </table>
 
-  <?=$this->html->link('Dodaj zjedzony posilek', 'Serving::add')?>
+  <?=$this->html->link('Dodaj zjedzony posilek', 'Food::add')?>
   

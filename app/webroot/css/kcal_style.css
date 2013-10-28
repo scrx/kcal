@@ -126,3 +126,7 @@ nav a:active::before{
 .app #content form input[type=text].first-topped-border {
   border-top: 1px solid #cccccc; 
 }
+
+#content table thead th {
+	font-size:0.85em;
+}

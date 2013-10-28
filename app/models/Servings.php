@@ -3,9 +3,6 @@ namespace app\models;
 use lithium\util\Validator;
 
 class Servings extends \lithium\data\Model {
-		
-	
-	//$script = 'jquery-1.7.2.js';
 	
 	protected $_schema = array(
 		'_id'		=>	array('type' => 'id'),
