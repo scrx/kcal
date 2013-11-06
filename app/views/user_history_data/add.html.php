@@ -10,7 +10,7 @@
  	<?=$this->form->field('neck',array('label'=>false,'div' => false,'placeholder'=>'Szyja'));?>  
  	<?=$this->form->field('hips',array('label'=>false,'div' => false,'placeholder'=>'Biodra'));?>   
  	<?=$this->form->field('biceps',array('label'=>false,'div' => false,'placeholder'=>'Biceps'));?>   
- 	<?=$this->form->field('date_when',array('label'=>false,'div' => false,'placeholder'=>'Data'));?>   
+ 	<?=$this->form->field('date_when',array('label'=>false,'div' => false,'placeholder'=>'Data','class'=>'date_input'));?>   
     <?=$this->form->submit('Zapisz'); ?>
 <?=$this->form->end(); ?>
 <?php
@@ -26,3 +26,6 @@ Height: 6'2"
  */
 
  ?>
+<script>
+	$(".date_input").dateinput();
+</script>

@@ -39,7 +39,7 @@
         <?php }
         ?>
     </table>
-<?=$this->Paginator->paginate(); ?>
+<?php echo $this->Paginator->paginate(); ?>
 <p><?php echo $this->html->link('Żarło', 'User::signup')?></p>
 
             Menu User

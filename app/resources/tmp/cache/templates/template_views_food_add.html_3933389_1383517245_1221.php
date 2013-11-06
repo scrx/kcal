@@ -8,7 +8,8 @@
  * @license  www.notavailable.com public
  * @link     www.scx.grizon.pl/kcal
  */
-
+?>
+<?php
 echo $this->form->create();
     echo $this->form->field('name', array('label'=>false, 'placeholder'=>'Nazwa','class'=>'first-topped-border'));
     echo $this->form->field('kcal', array('label'=>false, 'placeholder'=>'Wartość energetyczna'));

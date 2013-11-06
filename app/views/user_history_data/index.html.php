@@ -15,7 +15,7 @@
 <?php foreach($userhistorydatas as $user_data): ?>
 
 	<tr>
-		<td><?=$user_data->date_when ?> </td> 
+		<td><?= date('d/m/Y h:m', $user_data->date_when->sec);  ?> </td> 
 		<td><?=$user_data->weight ?> </td> 
 		<td><?=$user_data->body_fat ?></td>
 		<td><?=$user_data->height ?></td>

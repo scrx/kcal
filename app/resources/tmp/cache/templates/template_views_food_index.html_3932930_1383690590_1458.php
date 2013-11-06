@@ -34,16 +34,16 @@
 <?php foreach($meals as $meal): ?>
 
     <tr>
-        <td> <?=$meal->name ?> </td>
-        <td> <?=$meal->kcal ?> </td>
-        <td> <?=$meal->prot ?> </td>
-        <td> <?=$meal->carb ?> </td>
-        <td> <?=$meal->fat ?>  </td>
-        <td> <?=$meal->fibe ?> </td>
-        <td> <?=$meal->magn ?> </td>
-        <td> <?=$meal->pota ?> </td>
-        <td> <?=$meal->iron ?> </td>
-        <td> <?=$meal->calc ?> </td>
+        <td> <?php echo $h($meal->name); ?> </td>
+        <td> <?php echo $h($meal->kcal); ?> </td>
+        <td> <?php echo $h($meal->prot); ?> </td>
+        <td> <?php echo $h($meal->carb); ?> </td>
+        <td> <?php echo $h($meal->fat); ?>  </td>
+        <td> <?php echo $h($meal->fibe); ?> </td>
+        <td> <?php echo $h($meal->magn); ?> </td>
+        <td> <?php echo $h($meal->pota); ?> </td>
+        <td> <?php echo $h($meal->iron); ?> </td>
+        <td> <?php echo $h($meal->calc); ?> </td>
 
         <td> <?php echo $this->html->link('<i class="icon-edit icon-red"></i>', 'edit/'.$meal->_id, array('escape'=>false)); ?>
             <?php echo $this->html->link('<i class="icon-remove"></i>', 'remove/'.$meal->_id, array('escape'=>false)); ?>  </td>

@@ -12,5 +12,5 @@
 
 
 <script>
-	$("#date").dateinput();
+	$(".date").dateinput();
 </script>
