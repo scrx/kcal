@@ -15,42 +15,44 @@
 
 <table>
     <thead>
-    <tr><th> Nazwa          </th>
-        <th> kcal </th>
-        <th> bialka         </th>
-        <th> węglowodany            </th>
-        <th> tluszcze       </th>
+        <tr><th> Nazwa          </th>
+            <th> kcal           </th>
+            <th> bialka         </th>
+            <th> węglowodany    </th>
+            <th> tluszcze       </th>
 
-        <th> błonnik            </th>
-        <th> magnez         </th>
-        <th> potas          </th>
-        <th> żelazo         </th>
-        <th> wapń           </th>
+            <th> błonnik        </th>
+            <th> magnez         </th>
+            <th> potas          </th>
+            <th> żelazo         </th>
+            <th> wapń           </th>
 
-        <th> Akcje </th>
-
-    </tr>
+            <th> Akcje </th>
+        </tr>
     </thead>
+
 <?php foreach($meals as $meal): ?>
 
     <tr>
-        <td> <?=$meal->name ?> </td>
-        <td> <?=$meal->kcal ?> </td>
-        <td> <?=$meal->prot ?> </td>
-        <td> <?=$meal->carb ?> </td>
-        <td> <?=$meal->fat ?>  </td>
-        <td> <?=$meal->fibe ?> </td>
-        <td> <?=$meal->magn ?> </td>
-        <td> <?=$meal->pota ?> </td>
-        <td> <?=$meal->iron ?> </td>
-        <td> <?=$meal->calc ?> </td>
+        <td> <?php echo $meal->name ?> </td>
+        <td> <?php echo $meal->kcal ?> </td>
+        <td> <?php echo $meal->prot ?> </td>
+        <td> <?php echo $meal->carb ?> </td>
+        <td> <?php echo $meal->fat  ?>  </td>
+        <td> <?php echo $meal->fibe ?> </td>
+        <td> <?php echo $meal->magn ?> </td>
+        <td> <?php echo $meal->pota ?> </td>
+        <td> <?php echo $meal->iron ?> </td>
+        <td> <?php echo $meal->calc ?> </td>
 
         <td> <?php echo $this->html->link('<i class="icon-edit icon-red"></i>', 'edit/'.$meal->_id, array('escape'=>false)); ?>
             <?php echo $this->html->link('<i class="icon-remove"></i>', 'remove/'.$meal->_id, array('escape'=>false)); ?>  </td>
     </tr>
 
-<?php endforeach; ?>
+    <?php 
+endforeach; 
+    ?>
 
 </table>
 
-<?=$this->Paginator->paginate();
+<?php echo $this->Paginator->paginate();

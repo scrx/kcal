@@ -27,7 +27,7 @@ use app\models\UserHistoryDatas;
 class UserController extends \lithium\action\Controller
 {
 
-     public $publicActions = array('login');
+     public $publicActions = array('login','add');
      /**
       * index action
       *
@@ -54,7 +54,7 @@ class UserController extends \lithium\action\Controller
         $order = array('name' => 'ASC');
         $users = Users::all(compact('order', 'limit', 'page'));
 
-        return compact('users','total', 'limit', 'page');
+        return compact('users', 'total', 'limit', 'page');
     }
 
     /**
