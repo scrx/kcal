@@ -27,15 +27,15 @@ use app\models\UserHistoryDatas;
 class UserController extends \lithium\action\Controller
 {
 
-     public $publicActions = array('login','add');
+     public $publicActions = array('login','register');
+
      /**
-      * index action
+      * Index action
       *
       * @return [type] [description]
       */
     public function index()
     {
-
         if (!Auth::check('default')) {
             return $this->redirect('User::login');
         }
@@ -58,12 +58,30 @@ class UserController extends \lithium\action\Controller
     }
 
     /**
-     * Action which allows us to save $this->request-> data with new user data
+     * Action which allow us to save $this->request-> data with new user data
      *
      * @return [type] [description]
      */
     public function add()
     {
+        $user = Users::create($this->request->data);
+
+        if (($this->request->data) && $user->save()) {
+            return $this->redirect('User::index');
+        }
+
+        return compact('user');
+    }
+
+    /**
+     * Action which allows user to register himself in system
+     *
+     * @return [type] [description]
+     */
+    public function register()
+    {
+
+      
         $user = Users::create($this->request->data);
 
         if (($this->request->data) && $user->save()) {
@@ -112,26 +130,19 @@ class UserController extends \lithium\action\Controller
     {
 
         $session_data = Session::read();
-        if(!isset($session_data['default']['name']))
+        if (!isset($session_data['default']['name'])) {
             $session_data['default']['name'] = 'Popraw imię';
-        if(!isset($session_data['default']['surname']))
+        }
+        if (!isset($session_data['default']['surname'])) {
             $session_data['default']['surname'] = 'Popraw nazwisko';
-        //print_r($session_data);
-        //$user_details = Users::find('first');
-        //foreach ($user_details as $user_det) {
-        //      print_r($user_det);
-        //}
-        //
-        $id_uzytkownika = $session_data['default']['_id'];
+        }
 
-        //var_dump($id_uzytkownika);
+        $id_uzytkownika = $session_data['default']['_id'];
 
         $user_data = UserHistoryDatas::find('first', array('conditions'=> array('user_id'=>$id_uzytkownika)));
 
-        //var_dump($user_data);
-        //
+
         return compact('user_data', 'session_data');
 
     }
-
 }

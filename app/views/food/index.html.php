@@ -11,7 +11,7 @@
 ?>
 </br>
 
-<h5> <i class='icon-list '> </i> Food list </h5>
+<h5> <i class='icon-list '> </i> Food list <small class='pull-right'> <?php echo $this->html->link('<i class="icon-plus"> </i> Add food', 'Food::add', array('escape' => false)) ?>   </small> </h5> 
 
 <table>
     <thead>

@@ -1,62 +1,76 @@
 <?php
+/**
+ * File containing ServingController class
+ *
+ * @category FileControllers
+ * @package  KcalApp
+ * @author   Mateusz P <mattpiskorzatgmail.com>
+ * @license  www.notavailable.com public
+ * @link     www.scx.grizon.pl/kcal
+ */
 
 namespace app\controllers;
+
 use app\models\Servings;
 use app\models\Foods;
-use lithium\security\Auth;
-use lithium\storage\Session;
 
-class ServingController extends \lithium\action\Controller {
+/**
+ * ServingController
+ *
+ * @category Controllers
+ * @package  KcalApp
+ * @author   Mateusz P <mattpiskorzatgmail.com>
+ * @license  www.notavailable.com public
+ * @link     www.scx.grizon.pl/kcal
+ */
+class ServingController extends \lithium\action\Controller
+{
+    /**
+     * [index description]
+     *
+     * @return [type] [description]
+     */
+    public function index()
+    {
+        $servings = Servings::all();
 
-	public function index() {
+        return compact('servings');
 
-		$servings = Servings::all();
-		return compact('servings');
+    }
 
-	}
-	
-	public function add() {
+    /**
+     * [add description]
+     *
+     * @return [type] [description]
+     */
+    public function add()
+    {
+        $success = false;
+        $meals = Foods::all();
+        $meals_array = array();
 
-		$success = false;
-		$meals = Foods::all();
-		$meals_array = array();
-		//$meals = compact($meals);
-		//foreach($meals as $meal => $key){
-		//	print_r($meal[$key]);
-		//}
-		//$mealz = array();
-		foreach($meals as $meal){
-			//print_r($meal->_id->{'$id'});
-			//print_r($meal->name);
-			$meals_array[$meal->_id->{'$id'}] = $meal->name;
-			//$id_jakies = $meal->{'$id'};
-			//print_r($id_jakies);
-			//$mealz[$meal->_id] = 'baba';
-		}
-		//print_r($meals_array);
-		//die();
-		//foreach($mealz as $mil){
-		//	print_r($mil);
-		//}
-		
+        foreach ($meals as $meal) {
+            $meals_array[$meal->_id->{'$id'}] = $meal->name;
+        }
+        if ($this->request->data) {
+            $serving = Servings::create($this->request->data);
+            $success = $serving->save();
 
-		
-	if ($this->request->data) {
-		$serving = Servings::create($this->request->data);
-		$success = $serving->save();
-		return $this->redirect('Serving::index');	
-	}
-	return compact('success','meals_array');
+            return $this->redirect('Serving::index');
+        }
+
+        return compact('success', 'meals_array');
+    }
+
+    /**
+     * Method to remove all given servings
+     *
+     * @return [type] [description]
+     */
+    public function removeAll()
+    {
+        $rm = Foods::remove();
+
+        return $this->redirect('Serving::index');
+    }
 }
-	
-	
-	public function removeAll(){
-		$rm = Foods::remove();
-		return $this->redirect('Serving::index');	
-	}
-		
-	
-	  
-}
-
-?>

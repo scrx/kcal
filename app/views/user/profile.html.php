@@ -10,43 +10,31 @@
  */
 ?>
 
-<h4> User Profile <small> <?php echo $session_data['default']['name'] ?> <?php echo $session_data['default']['surname'] ?> </small></h4>
-
+<h4> User Profile 
+    <small> 
+        <?php echo $session_data['default']['name'] ?> <?php echo $session_data['default']['surname'] ?> 
+    </small>
+</h4>
 <table>
+    <thead>
+        <tr>
+            <th> Weight </th>
+            <td> <?php echo isset($user_data->weight) ? $user_data->weight : 'Missing user weight data' ?>  </td>
+        </tr>
+        <tr>
+            <th> Height	</th>
+            <td> <?php echo isset($user_data->height) ? $user_data->height : 'Missing user height data' ?> </td>
+        </tr>
+        <tr>
+            <th> Waist </th>
+            <td> <?php echo isset($user_data->waist) ? $user_data->waist : 'Missing user waist data' ?> </td>
+        </tr>
+        <tr> 
+            <th> Hips </th>
+            <td><?php echo isset($user_data->hips) ? $user_data->hips : 'Missing user hips data' ?> </td>
+        </tr>
+    </thead>
+    <tbody>
 
-<thead>
-    <tr>
-        <th>
-        Waga
-    </th>
-        <td>
-        <?php echo $user_data->weight ?>
-    </td>
-
-    </tr>
-    <tr>
-        <th> Wzrost	</th>
-        <td> <?php echo $user_data->height ?> </td>
-    </tr>
-    <tr>
-            <th>
-        Pas
-    </th>
-        <td>
-        <?php echo $user_data->waist ?>
-    </td>
-    </tr>
-    <tr>
-            <th>
-        Biodra
-    </th>
-            <td>
-        <?php echo $user_data->hips ?>
-    </td>
-    </tr>
-</thead>
-<tbody>
-
-</tbody>
-
+    </tbody>
 </table>

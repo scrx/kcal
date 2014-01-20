@@ -21,7 +21,9 @@ namespace app\models;
  */
 class Foods extends \lithium\data\Model
 {
-    protected $_schema = array(
+    public static $alias = 'Foods';
+
+    protected $schema = array(
         '_id'	=>	array('type' => 'id'),
         'name'	=>	array('type' => 'string', 'null' => 0),
         'kcal'	=>	array('type' => 'string', 'null' => 0), //kilo kalorie
@@ -35,5 +37,33 @@ class Foods extends \lithium\data\Model
         'magne'	=>	array('type' => 'string', 'null' => 0), //magnez
         'nosat_fat'	=>	array('type' => 'string', 'null' => 0),
     );
+
+    /**
+     * simple method for calculating energy given by total of proteins, carbs and fats given
+     *
+     * @param array $nutrients array with corresponding number of protein, carb and fat
+     *
+     * @return int sum of given nutrients
+     */
+    public static function calculateKcal($nutrients)
+    {
+        if (isset($nutrients['protein'])) {
+            $protein = $nutrients['protein'];
+        } else {
+            $protein = 0;
+        }
+        if (isset($nutrients['carb'])) {
+            $carb = $nutrients['carb'];
+        } else {
+            $carb = 0;
+        }
+        if (isset($nutrients['fat'])) {
+            $fat = $nutrients['fat'];
+        } else {
+            $fat = 0;
+        }
+
+        return ($protein*4)+ ($carb * 4) +($fat * 9);
+    }
 
 }

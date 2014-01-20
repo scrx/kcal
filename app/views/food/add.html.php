@@ -8,13 +8,16 @@
  * @license  www.notavailable.com public
  * @link     www.scx.grizon.pl/kcal
  */
+?>
+<h5> <i class='icon-plus '> </i> Add food <small class='pull-right'> <?php echo $this->html->link('<i class="icon-list"> </i> Back to list', 'Food::index', array('escape' => false)) ?>   </small> </h5> 
 
+<?php
 echo $this->form->create();
     echo $this->form->field('name', array('label'=>false, 'placeholder'=>'Nazwa','class'=>'first-topped-border'));
     echo $this->form->field('kcal', array('label'=>false, 'placeholder'=>'Wartość energetyczna'));
     echo $this->form->field('prot', array('label'=>false, 'placeholder'=>'Białko'));
     echo $this->form->field('carb', array('label'=>false, 'placeholder'=>'Węglowodany'));
-    echo $this->form->field('fat',  array('label'=>false, 'placeholder'=>'Tłuszcze'));
+    echo $this->form->field('fat', array('label'=>false, 'placeholder'=>'Tłuszcze'));
     echo $this->form->field('fibe', array('label'=>false, 'placeholder'=>'Błonnik'));
     echo $this->form->field('magn', array('label'=>false, 'placeholder'=>'Magnez'));
     echo $this->form->field('pota', array('label'=>false, 'placeholder'=>'Potas'));

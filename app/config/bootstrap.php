@@ -105,4 +105,5 @@ Users::applyFilter('save', function($self, $params, $chain) {
 // require __DIR__ . '/bootstrap/console.php';
  ini_set("display_errors", 1);
 
+ date_default_timezone_set('Europe/Warsaw');
 ?>
