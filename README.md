@@ -1,7 +1,5 @@
-kcal
+KcalApp 
 
 
-so far thats all ;)
 ====
-
-Here I will post to-do list.
+In early dev

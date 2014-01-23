@@ -31,7 +31,11 @@ class UserHistoryDataController extends \lithium\action\Controller
      */
     public function index()
     {
-        $userhistorydatas = UserHistoryDatas::all();
+        $session_data = Session::read();
+        $user_id = $session_data['default']['_id'];
+       
+        $userhistorydatas = UserHistoryDatas::find('all', array('conditions'=> array('user_id'=>$user_id)));
+        
 
         return compact('userhistorydatas');
     }

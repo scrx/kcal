@@ -23,7 +23,8 @@ namespace app\controllers;
  * For example, browsing to `/pages/about/company` will render
  * `/views/pages/about/company.html.php`.
  */
-class PagesController extends \lithium\action\Controller {
+class PagesController extends \lithium\action\Controller
+{
 
 	public function view() {
 		$path = func_get_args() ?: array('home');

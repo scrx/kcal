@@ -95,6 +95,9 @@ Users::applyFilter('save', function($self, $params, $chain) {
 });
 
 
+
+
+
  
 /**
  * Add the application.  You can pass a `'path'` key here if this bootstrap file is outside of
@@ -103,7 +106,13 @@ Users::applyFilter('save', function($self, $params, $chain) {
 
 
 // require __DIR__ . '/bootstrap/console.php';
+// 
  ini_set("display_errors", 1);
-
  date_default_timezone_set('Europe/Warsaw');
+
+
+
+
+
+
 ?>

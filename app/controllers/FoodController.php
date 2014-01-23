@@ -130,7 +130,7 @@ class FoodController extends \lithium\action\Controller
 
             //$myPost = MyPosts::find($this->request->args[0]);
 
-            $food = Foods::find(array('_id'=>$this->request->data['_id']));
+            //$food = Foods::find(array('_id'=>$this->request->data['_id']));
 
             $this->request->data['modified']=time();
             $success = $food->save($this->request->data);

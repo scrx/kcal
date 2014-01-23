@@ -33,8 +33,14 @@
 
 <?php foreach($meals as $meal): ?>
 
-    <tr>
-        <td> <?php echo $meal->name ?> </td>
+    <tr><!--<a href="<?=$this->url(array('Employees::view',
+        'args' => array($employee->id)));?>">
+            <?=$employee->name?>
+        </a> -->
+        <td> <?php 
+        echo $this->html->link($meal->name, $this->url(array('Food::edit',
+        'args' => array($meal->_id))), array('escape'=>false)); 
+        //echo $meal->name ?> </td>
         <td> <?php echo $meal->kcal ?> </td>
         <td> <?php echo $meal->prot ?> </td>
         <td> <?php echo $meal->carb ?> </td>

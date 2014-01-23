@@ -13,7 +13,7 @@
 	</tr>
 	
 <?php foreach($userhistorydatas as $user_data): ?>
-
+	
 	<tr>
 		<td><?= date('d/m/Y h:m', $user_data->date_when->sec);  ?> </td> 
 		<td><?=$user_data->weight ?> </td> 

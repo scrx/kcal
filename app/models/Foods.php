@@ -23,9 +23,23 @@ class Foods extends \lithium\data\Model
 {
     public static $alias = 'Foods';
 
-    protected $schema = array(
-        '_id'	=>	array('type' => 'id'),
-        'name'	=>	array('type' => 'string', 'null' => 0),
+   public $validates = array(
+            'name' => array('notEmpty', 'message' => 'Please supply a name.'),
+            'kcal' => array('notEmpty', 'message' => 'Please supply energy in kcal.'),
+    );
+
+
+    protected $_schema = array(
+        '_id'	=>	array(
+            'type' => 'id',
+            'length' => 10,
+            'null' => false,
+            'default' => null
+        ),
+        'name'	=>	array(
+            'type' => 'string',
+            'null' => 0
+        ),
         'kcal'	=>	array('type' => 'string', 'null' => 0), //kilo kalorie
         'prot'	=>	array('type' => 'string', 'null' => 0), //bialka
         'carb'	=>	array('type' => 'string', 'null' => 0), //weglow

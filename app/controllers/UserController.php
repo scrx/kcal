@@ -14,6 +14,7 @@ use app\models\Users;
 use lithium\security\Auth;
 use lithium\storage\Session;
 use app\models\UserHistoryDatas;
+use li3_flash_message\extensions\storage\FlashMessage;
 
 /**
  * Controller
@@ -40,6 +41,7 @@ class UserController extends \lithium\action\Controller
             return $this->redirect('User::login');
         }
 
+        //FlashMessage::write('Succes! New user was added.');
         $total = Users::count();
         $page = 1;
 
@@ -67,6 +69,7 @@ class UserController extends \lithium\action\Controller
         $user = Users::create($this->request->data);
 
         if (($this->request->data) && $user->save()) {
+            FlashMessage::write('Succes! New user was added.');
             return $this->redirect('User::index');
         }
 
