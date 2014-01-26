@@ -2,10 +2,10 @@
 /**
  * File containing ServingController class
  *
- * @category FileControllers
+ * @category ControllersFile
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 
@@ -13,6 +13,7 @@ namespace app\controllers;
 
 use app\models\Servings;
 use app\models\Foods;
+use lithium\storage\Session;
 
 /**
  * ServingController
@@ -20,7 +21,7 @@ use app\models\Foods;
  * @category Controllers
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 class ServingController extends \lithium\action\Controller
@@ -32,9 +33,22 @@ class ServingController extends \lithium\action\Controller
      */
     public function index()
     {
-        $servings = Servings::all();
 
-        return compact('servings');
+        $session_data = Session::read();
+        $user_id = $session_data['default']['_id'];
+
+        $servings = Servings::find('all',array('conditions'=>array('user_id'=>$user_id)));
+
+        $foods = array();
+        if(count($servings)){
+            $food_ids = array();
+            foreach($servings as $serving){
+                $food_ids[] = $serving->food_id;
+            }
+            $foods = Foods::find('all', array('conditions'=>array('_id'=>$food_ids)));                     
+        }
+
+        return compact('servings','foods');
 
     }
 
@@ -46,20 +60,41 @@ class ServingController extends \lithium\action\Controller
     public function add()
     {
         $success = false;
-        $meals = Foods::all();
-        $meals_array = array();
-
-        foreach ($meals as $meal) {
-            $meals_array[$meal->_id->{'$id'}] = $meal->name;
-        }
+        $meals = Foods::find('list',array('fields'=>'name'));
+ 
+        $meals_array = $meals;
+  
         if ($this->request->data) {
-            $serving = Servings::create($this->request->data);
+            $serving_data = $this->request->data;
+
+            $session_data = Session::read();        
+            $serving_data['user_id'] = $session_data['default']['_id'];   
+            $serving_data['modified'] = $serving_data['created'] = date('H:i:s d-m-Y',time());
+
+            //$this->request->data->modified -> $this->request->data->created= time();
+
+            $serving = Servings::create($serving_data);
             $success = $serving->save();
 
             return $this->redirect('Serving::index');
         }
 
         return compact('success', 'meals_array');
+    }
+
+    /**
+     * Simple method to remove selected serving
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
+    public function remove($id)
+    {
+        if(isset($id)) {
+            $success = Servings::remove(array('_id'=>$id));
+        }
+        
+
+        $this->redirect("Serving::index");        
     }
 
     /**
@@ -72,5 +107,14 @@ class ServingController extends \lithium\action\Controller
         $rm = Foods::remove();
 
         return $this->redirect('Serving::index');
+    }
+
+    /**
+     * Future Action for genereting ajax list of servings for the user
+     * @return [type] [description]
+     */
+    public function getServings()
+    {
+
     }
 }

@@ -2,10 +2,10 @@
 /**
  * File containing UserController class
  *
- * @category FileControllers
+ * @category ControllersFile
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 namespace app\controllers;
@@ -21,8 +21,8 @@ use li3_flash_message\extensions\storage\FlashMessage;
  *
  * @category Controllers
  * @package  KcalApp
- * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @author   Mateusz P <mattpiskorzatgmail.com> scrx
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 class UserController extends \lithium\action\Controller
@@ -69,7 +69,7 @@ class UserController extends \lithium\action\Controller
         $user = Users::create($this->request->data);
 
         if (($this->request->data) && $user->save()) {
-            FlashMessage::write('Succes! New user was added.');
+            FlashMessage::write(array('User successfully created. You may now log in.','class'=>'alert-success'));
             return $this->redirect('User::index');
         }
 
@@ -83,16 +83,15 @@ class UserController extends \lithium\action\Controller
      */
     public function register()
     {
-
-      
         $user = Users::create($this->request->data);
-
         if (($this->request->data) && $user->save()) {
-            return $this->redirect('User::index');
+            FlashMessage::write(array('User successfully created. You may now log in.','class'=>'alert-success'));
+            return $this->redirect('User::login');
         }
 
         return compact('user');
     }
+    
     /**
      * Action login
      *
@@ -103,10 +102,9 @@ class UserController extends \lithium\action\Controller
         if (! Auth::check('default')) {
 
             if ($this->request->data && Auth::check('default', $this->request)) {
-                //var_dump('yeah');
-                //die('yea');
-                //return $this->redirect('/');
-                return $this->redirect('User::index');
+
+                FlashMessage::write(array('Welcome','class'=>'alert-success'));
+                return $this->redirect('User::profile');
             }
             // Handle failed authentication attempts
         } else {
@@ -121,7 +119,7 @@ class UserController extends \lithium\action\Controller
     public function logout()
     {
         Auth::clear('default');
-
+        FlashMessage::write(array('You have been Logged out.','class'=>'alert-info'));
         return $this->redirect('/');
     }
     /**
@@ -134,15 +132,15 @@ class UserController extends \lithium\action\Controller
 
         $session_data = Session::read();
         if (!isset($session_data['default']['name'])) {
-            $session_data['default']['name'] = 'Popraw imię';
+            $session_data['default']['name'] = 'Fix Name';
         }
         if (!isset($session_data['default']['surname'])) {
-            $session_data['default']['surname'] = 'Popraw nazwisko';
+            $session_data['default']['surname'] = 'Fix Surname';
         }
 
-        $id_uzytkownika = $session_data['default']['_id'];
+        $user_id = $session_data['default']['_id'];
 
-        $user_data = UserHistoryDatas::find('first', array('conditions'=> array('user_id'=>$id_uzytkownika)));
+        $user_data = UserHistoryDatas::find('first', array('conditions'=> array('user_id'=>$user_id)));
 
 
         return compact('user_data', 'session_data');

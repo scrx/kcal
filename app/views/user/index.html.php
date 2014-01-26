@@ -5,7 +5,7 @@
  * @category Views
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 ?>
@@ -40,14 +40,6 @@
         ?>
     </table>
 <?=$this->Paginator->paginate(); ?>
-<p><?php echo $this->html->link('Żarło', 'User::signup')?></p>
-
-            Menu User
-                <?php echo $this->html->link('Index user', 'User::index')?>
-                <?php echo $this->html->link('Dodaj user', 'User::add')?>
-                <?php echo $this->html->link('Login', 'User::login')?>
-                <?php echo $this->html->link('UserHistoryData', 'UserHistoryData::index')?>
-                <?php echo $this->html->link('Dodaj dane historyczne :P ', 'UserHistoryData::add')?>
 
 <?php
 }

@@ -5,7 +5,7 @@
  * @category FileControllers
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  http://opensource.org/licenses/bsd-license.php The BSD License
+ * @license  www.notavailable.com public
  * @link     www.scx.grizon.pl/kcal
  */
 ?>

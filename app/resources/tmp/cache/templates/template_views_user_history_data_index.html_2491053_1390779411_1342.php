@@ -26,15 +26,15 @@
 <?php foreach($userhistorydatas as $user_data): ?>
 	
 	<tr>
-		<td><?= date('d/m/Y h:m', $user_data->date_when->sec);  ?> </td> 
-		<td><?=$user_data->weight ?> </td> 
-		<td><?=$user_data->body_fat ?></td>
-		<td><?=$user_data->height ?></td>
-		<td><?=$user_data->neck ?> </td> 
-		<td><?=$user_data->chest ?></td>
-		<td><?=$user_data->biceps ?> </td> 
-		<td><?=$user_data->hips ?> </td> 
-		<td><?=$user_data->waist ?> </td> 
+		<td><?php echo $h(date('d/m/Y h:m', $user_data->date_when->sec)); ?> </td> 
+		<td><?php echo $h($user_data->weight); ?> </td> 
+		<td><?php echo $h($user_data->body_fat); ?></td>
+		<td><?php echo $h($user_data->height); ?></td>
+		<td><?php echo $h($user_data->neck); ?> </td> 
+		<td><?php echo $h($user_data->chest); ?></td>
+		<td><?php echo $h($user_data->biceps); ?> </td> 
+		<td><?php echo $h($user_data->hips); ?> </td> 
+		<td><?php echo $h($user_data->waist); ?> </td> 
 	
 	</tr>
     
@@ -44,4 +44,4 @@
 
 </table>
 
-<?=$this->html->link($t('Add user body measurements'), 'UserHistoryData::add') ?>
+<?php echo $this->html->link($t('Add user body measurements'), 'UserHistoryData::add'); ?>

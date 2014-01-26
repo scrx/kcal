@@ -102,7 +102,7 @@ nav a:active::before{
 }
 
 #container {
-	padding-top: 55px !important;
+	padding-top: 20px !important;
 }
 
 
@@ -129,4 +129,38 @@ nav a:active::before{
 
 #content table thead th {
 	font-size:0.85em;
+}
+
+.navbar.navbar-fixed-top .navbar-inner {
+	padding: 0px 10px;
+}
+
+table input[type="text"] {
+	margin: 0px;
+	padding: 0.15em 5px;
+	font-size:11px;
+
+}
+
+form.edit_form {
+display: block;
+clear: both;
+background: #fafafa;
+padding: 0em ;
+border: 0px solid #e6e6e6;
+}
+
+.edit_form td {
+padding: 0em 0em;
+border: 1px solid #e6e6e6;
+vertical-align: middle;
+text-align: left;
+font-size: 0.85em;
+}
+.edit_form th {
+padding: 0.15em 5px;
+border: 1px solid #e6e6e6;
+vertical-align: middle;
+text-align: left;
+font-size: 0.85em;
 }

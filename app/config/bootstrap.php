@@ -36,7 +36,7 @@ require __DIR__ . '/bootstrap/libraries.php';
  * rules of the `ErrorHandler` class to provide a high level of control over managing exceptions in
  * your application, with no impact on framework or application code.
  */
-// require __DIR__ . '/bootstrap/errors.php';
+ require __DIR__ . '/bootstrap/errors.php';
 
 /**
  * This file contains configurations for connecting to external caching resources, as well as
@@ -67,7 +67,7 @@ require __DIR__ . '/bootstrap/session.php';
  * transliterations, localized validation, and how localized text should be loaded. Uncomment this
  * line if you plan to globalize your site.
  */
-// require __DIR__ . '/bootstrap/g11n.php';
+ require __DIR__ . '/bootstrap/g11n.php';
 
 /**
  * This file contains configurations for handling different content types within the framework,
@@ -97,8 +97,6 @@ Users::applyFilter('save', function($self, $params, $chain) {
 
 
 
-
- 
 /**
  * Add the application.  You can pass a `'path'` key here if this bootstrap file is outside of
  * your main application, but generally you should not need to change any settings.
@@ -108,11 +106,3 @@ Users::applyFilter('save', function($self, $params, $chain) {
 // require __DIR__ . '/bootstrap/console.php';
 // 
  ini_set("display_errors", 1);
- date_default_timezone_set('Europe/Warsaw');
-
-
-
-
-
-
-?>

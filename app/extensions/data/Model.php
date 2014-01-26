@@ -6,7 +6,7 @@
 namespace app\extensions\data;
 
 //use lithium\security\Password;
-
+/*
 class Model extends \lithium\data\Model {
 
     public static function __init() {
@@ -31,6 +31,5 @@ class Model extends \lithium\data\Model {
         });
         // }}}
     }
-}
+} */
 
-?>

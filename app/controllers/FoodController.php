@@ -2,10 +2,10 @@
 /**
  * File with Food class
  *
- * @category FileControllers
+ * @category ControllersFile
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>, Filip K <filipkuligatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 
@@ -18,7 +18,7 @@ use app\models\Foods;
  * @category Controllers
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 class FoodController extends \lithium\action\Controller
@@ -70,28 +70,77 @@ class FoodController extends \lithium\action\Controller
     {
 
         $meals = Foods::count();
-        if ($meals > 640) {
-            $this->redirect("Food::index");
+        if ($meals > 1) {
+            //To prevent more then 1 import
+            $this->redirect("Food::index", array('exit'=>true));
         }
-        $products = file_get_contents("data/products.txt");
-        $products = explode("\n", $products);
+        $products_file = file_get_contents("data/nutrient_data.csv");
+        $products = explode("\n", $products_file);
+       
         foreach ($products as $product) {
             list(
+                $product_info['ndb_no'],
                 $product_info['name'],
-                $product_info['prot'],
-                $product_info['fat'],
-                $product_info['carb'],
-                $product_info['kcal'],
-                $product_info['sat_fat'],
-                $product_info['unsat_fat'])
+                $product_info['water'],
+                $product_info['kcal' ],
+                $product_info['protein' ],
+                $product_info['lipid_total'],
+                $product_info['ash'],
+                $product_info['carbs'],
+                $product_info['fiber'],
+                $product_info['sugar_total'],
+                $product_info['calcium'],
+                $product_info['iron'],
+                $product_info['magnesium'],
+                $product_info['phosphorus'],
+                $product_info['potassium'],
+                $product_info['sodium'],
+                $product_info['zinc'],
+                $product_info['copper'],
+                $product_info['manganese'],
+                $product_info['selenium'],
+                $product_info['vit_c'],
+                $product_info['thiamin'],
+                $product_info['riboflavin'],
+                $product_info['niacin'],
+                $product_info['panto_acid'],
+                $product_info['vit_b6'],
+                $product_info['folate_tot'],
+                $product_info['folic_acid'],
+                $product_info['food_folate'],
+                $product_info['folate_dfe'],
+                $product_info['choline_tot'],
+                $product_info['vit_b12'],
+                $product_info['vit_a_iu'],
+                $product_info['vit_a_rae'],
+                $product_info['retinol'],
+                $product_info['alpha_carot'],
+                $product_info['beta_carot'],
+                $product_info['beta_crypt'],
+                $product_info['lycopene'],
+                $product_info['lut_plus_zea'],
+                $product_info['vit_e'],
+                $product_info['vit_d'],
+                $product_info['vit_d_iu'],
+                $product_info['vit_k'],
+                $product_info['fa_sat'],
+                $product_info['fa_mono'],
+                $product_info['fa_poly'],
+                $product_info['cholestrl'],
+                $product_info['gmwt_1'],
+                $product_info['gmwt_desc1'],
+                $product_info['gmwt_2'],
+                $product_info['gmwt_desc2'],
+                $product_info['refuse_pct'])
                     = explode("\t", $product);
-             $product_info['created'] = time();
-             $product_info['modified'] = time();
-             $food = Foods::create($product_info);
-             $food->save();
-        }
 
-        $this->redirect("Food::index");
+            $product_info['modified'] = $product_info['created'] =  time();
+            $food = Foods::create($product_info);
+
+            $food->save();
+  
+        }
+        $this->redirect("Food::index", array('exit'=>true));
     }
     /**
      * [removeAll description]
@@ -127,10 +176,8 @@ class FoodController extends \lithium\action\Controller
     public function edit($id)
     {
         if ($this->request->data) {
-
-            //$myPost = MyPosts::find($this->request->args[0]);
-
-            //$food = Foods::find(array('_id'=>$this->request->data['_id']));
+            
+            $food = Foods::find(array('_id'=>$this->request->data['_id']));
 
             $this->request->data['modified']=time();
             $success = $food->save($this->request->data);
@@ -138,9 +185,19 @@ class FoodController extends \lithium\action\Controller
             return $this->redirect('Food::index');
         }
 
-        $food_item = Foods::find('first', array('conditions'=> array('_id'=>$id)));
+        $food = Foods::find('first', array('conditions'=> array('_id'=>$id)));
 
-        return compact('food_item');
+        return compact('food');
 
+    }
+    public function view($id)
+    {
+        if (is_null($id)) {
+            $this->redirect('Food:index');
+        }
+
+        $food = Foods::find('first', array('conditions'=> array('_id'=>$id)));
+
+        return compact('food');
     }
 }

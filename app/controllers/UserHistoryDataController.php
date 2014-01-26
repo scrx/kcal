@@ -2,10 +2,10 @@
 /**
  * File containing UserHistoryDataController class
  *
- * @category FileControllers
+ * @category ControllersFile
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 namespace app\controllers;
@@ -18,7 +18,7 @@ use lithium\storage\Session;
  * @category Controllers
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 class UserHistoryDataController extends \lithium\action\Controller

@@ -1,11 +1,11 @@
 <?php
 /**
- * File containing user profile view
+ * User profile view
  *
  * @category ViewFiles
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 ?>
@@ -35,6 +35,8 @@
         </tr>
     </thead>
     <tbody>
-
+    <!-- empty --> 
     </tbody>
+
 </table>
+<?php echo $this->html->link($t('Add user body measurements'), 'UserHistoryData::add');

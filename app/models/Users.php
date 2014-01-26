@@ -1,11 +1,11 @@
 <?php
 /**
- * File with User model
+ * User model file
  *
- * @category Models
+ * @category ModelsFile
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 namespace app\models;
@@ -16,7 +16,7 @@ namespace app\models;
  * @category Models
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 class Users extends \lithium\data\Model
@@ -30,19 +30,5 @@ class Users extends \lithium\data\Model
         'surname'       =>  array('type' => 'string',   'null' => false),
         'created'       =>  array('type' => 'datetime', 'null' => false),
         'modified'      =>  array('type' => 'datetime', 'null' => false)
-        /*
-        'body_fat'  =>  array('type' => 'string', 'null' => false),
-
-        'height'    =>  array('type' => 'string', 'null' => false),
-        'waist'     =>  array('type' => 'string', 'null' => false),
-        'chest'     =>  array('type' => 'string', 'null' => false),
-        'neck'      =>  array('type' => 'string', 'null' => false),
-        'hips'      =>  array('type' => 'string', 'null' => false),
-        'biceps'    =>  array('type' => 'string', 'null' => false),
-
-        'date_when' =>  array('type' => 'datetime', 'null' => false),
-        'updated'   =>  array('type' => 'datetime', 'null' => false),
-        'created'   =>  array('type' => 'datetime', 'null' => false), */
-        //'current' =>  array('type' => 'int', 'null'   =>false);
     );
 }

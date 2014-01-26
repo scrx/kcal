@@ -1,21 +1,22 @@
 <?php
 /**
- * File containing UserController class
+ * UserHistoryData file
  *
- * @category FileControllers
+ * @category ModelsFile
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 namespace app\models;
+
 /**
- * Controller
+ * UserHistoryData model class
  *
- * @category Controllers
+ * @category Models
  * @package  KcalApp
  * @author   Mateusz P <mattpiskorzatgmail.com>
- * @license  www.notavailable.com public
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl/kcal
  */
 class UserHistoryDatas extends \lithium\data\Model

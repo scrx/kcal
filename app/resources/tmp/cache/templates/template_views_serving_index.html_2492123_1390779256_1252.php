@@ -16,9 +16,9 @@
 		<td> <?php echo $foods[$serving->food_id->{'$id'}]; ?> </td>
 		<td> <?php echo $foods[$serving->food_id->{'$id'}]->{'kcal'};
 		// (($foods[$serving->food_id->{'$id'}]->{'kcal'})*$serving->weight / 100); ?>
-		<td> <?=$serving->weight ?> </td>
-		<td> <?=$serving->cost ?> </td>
-		<td> <?=$serving->date_when ?> </td> 
+		<td> <?php echo $h($serving->weight); ?> </td>
+		<td> <?php echo $h($serving->cost); ?> </td>
+		<td> <?php echo $h($serving->date_when); ?> </td> 
 
 		<td title='TO-DO'>  
 			<?php echo $this->html->link('<i class="icon-edit"> </i>', $this->url(array('Serving::edit',
@@ -32,5 +32,5 @@
 
 </table>
 
-  <?=$this->html->link('Add serving', 'Serving::add')?>
+  <?php echo $this->html->link('Add serving', 'Serving::add'); ?>
   

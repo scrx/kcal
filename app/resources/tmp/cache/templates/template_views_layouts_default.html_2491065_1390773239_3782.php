@@ -14,17 +14,24 @@
 	<![endif]-->
 
 <head>
+
 	<?php echo $this->html->charset();?>
 	<title>Kcal Application > <?php echo $this->title(); ?></title>
-	 <?php echo $this->flashMessage->show(); ?>
-	<?php echo $this->html->style(array('debug', 'lithium','kcal_style','dateinput','bootstrap')); ?>
+	 
+    
+
+
+
+	<?php //echo $this->view()->render(array('element' => 'flash'), array('datavar' => 0)) ?>
+	<?php echo $this->html->style(array('debug', 'lithium','kcal_style','dateinput','bootstrap','select2','select2-bootstrap')); ?>
 
 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	
 	<?php echo $this->html->script('jquery-1.7.2.js'); ?>
 	<?php echo $this->html->script('jquery.tools.min.js'); ?>
-	<?php echo $this->html->script('js/bootstrap.js'); ?>
+	<?php echo $this->html->script('bootstrap.js'); ?>
+	<?php echo $this->html->script('select2.min.js'); ?>
 	
 	
 	<?php //echo $this->scripts(); ?>
@@ -35,17 +42,20 @@
 
 
 <body class="app" style='padding-top:40px'>
+		<!--<ul class="breadcrumb">
+		  <li><a href="#">Home</a> <span class="divider">/</span></li>
+		  <li><a href="#">Library</a> <span class="divider">/</span></li>
+		  <li class="active">Data</li>
+		</ul> -->
 
 	<div id="container">
-		
+
 		<div id="header">
 			<div class="navbar navbar-inverse navbar-fixed-top">
 			  <div class="navbar-inner ">
-			    <a class="brand" href="#">Kcal App</a>
+			    <?php echo $this->html->link('Kcal App','User::profile',array('class'=>'brand')); ?>
 			    <ul class="nav">
-			      <li class="active">
-			      	<a href="#">Home</a>	
-			      </li>
+	
 			       <li><?php echo $this->html->link('Profile', 'User::profile'); ?></li>
 			      <li><?php echo $this->html->link('User History', 'UserHistoryData::index'); ?></li>
 			  	  <li class="dropdown">
@@ -54,7 +64,14 @@
 							<li> <?php echo $this->html->link('List', 'Food::index'); ?></li>
 							<li> <?php echo $this->html->link('Add', 'Food::add'); ?></li>
 						</ul>
-			      </li>   			       
+			      </li>   	
+			  	  <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Serving <b class="caret"></b></a>                                           
+						<ul class="dropdown-menu">
+							<li> <?php echo $this->html->link('List', 'Serving::index'); ?></li>
+							<li> <?php echo $this->html->link('Add', 'Serving::add'); ?></li>
+						</ul>
+			      </li>  			      		       
 					<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>                                           
 						<ul class="dropdown-menu">
@@ -76,7 +93,10 @@
 			  </div>
 			</div>
 		</div>
+
 		<div id="content">
+			<?php echo $this->flashMessage->show(); ?>
+			
 			<?php echo $this->content(); ?>
 		</div>
 		
@@ -87,4 +107,7 @@
 	//alert('bla');
 	//test = $('div').attr('id');
 	//alert(test);
+
+    //$(document).ready(function() { $(".enable_select").select2({width:'100%', minimumInputLength: 2}); });
+
 </script>

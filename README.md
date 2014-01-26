@@ -1,5 +1,5 @@
 KcalApp 
 
-
+Simple application for tracking daily energy and nutrient intake.
 ====
-In early dev
+early dev

@@ -34,9 +34,9 @@
 
     <?php foreach($meals as $meal): ?>
 
-    <tr><!--<a href="<?=$this->url(array('Employees::view',
-        'args' => array($employee->id)));?>">
-            <?=$employee->name?>
+    <tr><!--<a href="<?php echo $this->url(array('Employees::view',
+        'args' => array($employee->id))); ?>">
+            <?php echo $h($employee->name); ?>
         </a> -->
         <td> <?php 
         echo $this->html->link($meal->name, $this->url(array('Food::view',

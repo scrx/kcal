@@ -36,7 +36,7 @@ class MockFoods extends Foods
  * @category ModelTests
  * @package  KcalTests
  * @author   scx <mattpiskorz@gmail.com>
- * @license  none www.scx.grizon.pl [description]
+ * @license  http://opensource.org/licenses/bsd-license.php The BSD License
  * @link     www.scx.grizon.pl
  */
 class FoodsTest extends \lithium\test\Unit
@@ -76,6 +76,6 @@ class FoodsTest extends \lithium\test\Unit
     }
 
     public function testFoodHaveKcal() {
-        $this->assertEqual('string', MockFoods::hasField('kcal')['type']);
+        $this->assertEqual('float', MockFoods::hasField('kcal')['type']);
     }    
 }
