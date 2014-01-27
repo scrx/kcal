@@ -21,9 +21,17 @@ namespace app\models;
  */
 class Users extends \lithium\data\Model
 {
+
+  public $validates = array(
+            'username' => array(
+                    array('unique', 'message' => 'Username already in use'),
+                    array('notEmpty', 'message'=>'Username cannot be empty')
+                    )
+                );
+
         protected $_schema = array(
         '_id'           =>  array('type' => 'id'),
-        'username'      =>  array('type' => 'string',   'null' => false,'unique'=>true),
+        'username'      =>  array('type' => 'string',   'null' => false),
         'password'      =>  array('type' => 'password', 'null' => false),
         'dateofbirth'   =>  array('type' => 'date',     'null' => false),
         'name'          =>  array('type' => 'string',   'null' => false),

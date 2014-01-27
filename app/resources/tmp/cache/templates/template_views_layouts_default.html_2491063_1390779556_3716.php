@@ -104,10 +104,5 @@
 </body>
 </html>
 <script>
-	//alert('bla');
-	//test = $('div').attr('id');
-	//alert(test);
-
     //$(document).ready(function() { $(".enable_select").select2({width:'100%', minimumInputLength: 2}); });
-
 </script>
