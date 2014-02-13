@@ -29,6 +29,7 @@ class Servings extends \lithium\data\Model {
 		'weight'	=> array('type' => 'numeric'),	
 		'cost'		=>	array('type' => 'numeric', 'null' => false),
 		'date_when'	=>	array('type' => 'string', 'null' => false),
+		'description'	=>	array('type' => 'string', 'null' => false),
 		'modified'	=>	array('type' => 'string', 'null' => false),
 		'created'	=>	array('type' => 'string', 'null' => false),
 	);

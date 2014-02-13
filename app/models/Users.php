@@ -27,7 +27,7 @@ class Users extends \lithium\data\Model
                     array('unique', 'message' => 'Username already in use'),
                     array('notEmpty', 'message'=>'Username cannot be empty')
                     )
-                );
+        );
 
         protected $_schema = array(
         '_id'           =>  array('type' => 'id'),

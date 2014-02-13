@@ -11,7 +11,18 @@
 ?>
 <h5> <i class='icon-plus '> </i> <?php echo $t('Add food'); ?> <small class='pull-right'> <?php echo $this->html->link('<i class="icon-list"> </i> Back to list', 'Food::index', array('escape' => false)) ?>   </small> </h5> 
 
+
+
 <?php
+
+if (count($errors) > 0) {
+    foreach ($errors as $error) {
+    ?>
+        <p class="text-error"><?= $error[0]; ?></p>
+    <?php
+    }
+}
+
 echo $this->form->create(null, array('class'=>'edit_form')); ?>
 <table>
     <thead>

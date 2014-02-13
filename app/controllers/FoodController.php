@@ -54,12 +54,15 @@ class FoodController extends \lithium\action\Controller
      */
     public function add()
     {
-        if ($this->request->data) {
-            $food = Foods::create($this->request->data);
-            $success = $food->save();
 
-            return $this->redirect('Food::index');
+        $food = Foods::create();
+        if ($this->request->data && $food->save($this->request->data)) {     
+            return $this->redirect('Food::index');      
         }
+        $errors = $food->errors();
+
+        return compact('errors');
+
     }
     /**
      * List of available foods in application
