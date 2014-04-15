@@ -164,3 +164,24 @@ vertical-align: middle;
 text-align: left;
 font-size: 0.85em;
 }
+
+.divider {
+	color:#eee;
+	height:15px;
+}
+
+.date-header {
+	background-color:#f9f9f9;
+	
+
+}
+
+tr.date-header th {
+
+	color:#666;
+}
+
+th.total-kcal {
+	color:#aaa;
+	background-color:#eee;
+}

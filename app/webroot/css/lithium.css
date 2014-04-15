@@ -122,9 +122,9 @@ td, th {
 	color: #666;
 	font-size: 0.85em;
 }
-tr:nth-child(even) {
+/*tr:nth-child(even) {
 	background: #fff;
-}
+}*/
 thead th, tfoot td {
 	background: #f3f3f3;
 	color: #333;

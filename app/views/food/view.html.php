@@ -9,7 +9,12 @@
  * @link     www.scx.grizon.pl/kcal
  */
 ?>
-<h5> <i class='icon-info-sign '> </i> View Food:<?php echo $food->name ?> <small class='pull-right'> <?php echo $this->html->link('<i class="icon-edit"> </i> Edit food', 'edit/'.$food->_id, array('escape' => false)) ?>   </small> </h5>
+<h5> <i class='icon-info-sign '> </i> View Food:<?php echo $food->name ?> 
+    <small class='pull-right'> 
+        <?php echo $this->html->link('<i class="icon-code-fork"> </i> Fork food', 'fork/'.$food->_id, array('escape' => false)) ?> 
+        <?php echo $this->html->link('<i class="icon-edit"> </i> Edit food', 'edit/'.$food->_id, array('escape' => false)) ?>  
+    </small> 
+</h5>
 
 <table>
     <thead>

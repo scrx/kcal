@@ -7,7 +7,6 @@
  */
 ?>
 <!doctype html>
-
 <html>
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -17,12 +16,6 @@
 
 	<?php echo $this->html->charset();?>
 	<title>Kcal Application > <?php echo $this->title(); ?></title>
-	 
-    
-
-
-
-	<?php //echo $this->view()->render(array('element' => 'flash'), array('datavar' => 0)) ?>
 	<?php echo $this->html->style(array('debug', 'lithium','kcal_style','dateinput','bootstrap','select2','select2-bootstrap')); ?>
 
 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
@@ -32,28 +25,17 @@
 	<?php echo $this->html->script('jquery.tools.min.js'); ?>
 	<?php echo $this->html->script('bootstrap.js'); ?>
 	<?php echo $this->html->script('select2.min.js'); ?>
-	
-	
-	<?php //echo $this->scripts(); ?>
-	<?php //echo $this->html->link('Icon', null, array('type' => 'icon')); ?>
-	<!--<script src="js/jquery-1.6.2.min.js"></script> -->
+		
 </head>
 
 
-
 <body class="app" style='padding-top:40px'>
-		<!--<ul class="breadcrumb">
-		  <li><a href="#">Home</a> <span class="divider">/</span></li>
-		  <li><a href="#">Library</a> <span class="divider">/</span></li>
-		  <li class="active">Data</li>
-		</ul> -->
 
 	<div id="container">
-
 		<div id="header">
 			<div class="navbar navbar-inverse navbar-fixed-top">
 			  <div class="navbar-inner ">
-			    <?=$this->html->link('Kcal App','User::profile',array('class'=>'brand'))?>
+			    <?=$this->html->link('Kcal App','Serving::index',array('class'=>'brand'))?>
 			    <ul class="nav">
 	
 			       <li><?=$this->html->link('Profile', 'User::profile') ?></li>
@@ -86,10 +68,7 @@
 			      <ul class='nav pull-right'>
 					<li>   <?= $this->html->link("Zalogowany jako: ".$this->login->fullName(), 'User::profile') ?> </li>
 					</ul>
-			    
-			
-			
-			
+			    	
 			  </div>
 			</div>
 		</div>
@@ -103,6 +82,3 @@
 	</div>
 </body>
 </html>
-<script>
-    //$(document).ready(function() { $(".enable_select").select2({width:'100%', minimumInputLength: 2}); });
-</script>

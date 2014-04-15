@@ -4,22 +4,28 @@
 	<thead>
 		<tr>
 			<th> Food </th> 
-			<th> kcal / 100(g) </th>
-			<th> Amount	</th>
-			<th> Total Cost </th>
-			<th> Date_when		</th>
+			<th> Kcal </th>
+			<th> Protein(g)		</th>
+			<th> Fats(g)		</th>
+			<th> Carbs(g)		</th>		
+			<th> Cost(€) </th>			
 			<th> Actions </th>
 		</tr>
 	</thead>
+<?php foreach($servings_by_date as $date_when => $servings): ?>	
+	
+	
+	
+	<tr class='date-header'> <th colspan=7> <?=$date_when?></th> <tr>	
 <?php foreach($servings as $serving): ?>
 	<tr>
-		<td> <?php echo $foods[$serving->food_id->{'$id'}]; ?> </td>
-		<td> <?php echo $foods[$serving->food_id->{'$id'}]->{'kcal'};
-		// (($foods[$serving->food_id->{'$id'}]->{'kcal'})*$serving->weight / 100); ?>
-		<td> <?=$serving->weight ?> </td>
+		<td> <?=$serving->food->name; ?> </td>
+		<td> <?=$serving->calculated_kcal;  ?>
+		<td> <?=$serving->calculated_protein ?> </td>  
+		<td> <?=$serving->calculated_fats ?> </td> 
+		<td> <?=$serving->calculated_carbs ?> </td> 	
 		<td> <?=$serving->cost ?> </td>
-		<td> <?=$serving->date_when ?> </td> 
-
+		
 		<td title='TO-DO'>  
 			<?php echo $this->html->link('<i class="icon-edit"> </i>', $this->url(array('Serving::edit',
         'args' => array($serving->_id))), array('escape'=>false)); ?>
@@ -28,6 +34,16 @@
         </td> 
 	</tr>
 
+<?php endforeach; ?>
+	<tr class=''> 
+		<th> Total </th>
+		<th class='total-kcal' > <?=$totals[$date_when]['kcal']; ?></th>
+		<th><?=$totals[$date_when]['protein']; ?></th>
+		<th><?=$totals[$date_when]['fats']; ?></th>
+		<th><?=$totals[$date_when]['carbs']; ?></th>
+		<th><?=$totals[$date_when]['cost']; ?></th>
+		<th colspan=4></th> <tr>		
+	<tr class='divider'> <th colspan=7> </th> <tr>	
 <?php endforeach; ?>
 
 </table>

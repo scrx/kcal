@@ -27,33 +27,23 @@ use lithium\storage\Session;
 class ServingController extends \lithium\action\Controller
 {
     /**
-     * [index description]
+     * Displaying all servings
      *
      * @return [type] [description]
      */
     public function index()
     {
+        $user_id = Session::read()['default']['_id'];
 
-        $session_data = Session::read();
-        $user_id = $session_data['default']['_id'];
+        $calculatedServings = Servings::calculatedServings($user_id);
+        list($servings_by_date,$totals) = $calculatedServings;
 
-        $servings = Servings::find('all',array('conditions'=>array('user_id'=>$user_id)));
-
-        $foods = array();
-        if(count($servings)){
-            $food_ids = array();
-            foreach($servings as $serving){
-                $food_ids[] = $serving->food_id;
-            }
-            $foods = Foods::find('all', array('conditions'=>array('_id'=>$food_ids)));                     
-        }
-
-        return compact('servings','foods');
+        return compact('servings_by_date','totals');
 
     }
 
     /**
-     * [add description]
+     * Action handling adding serving with embeded food
      *
      * @return [type] [description]
      */
@@ -67,11 +57,14 @@ class ServingController extends \lithium\action\Controller
         if ($this->request->data) {
             $serving_data = $this->request->data;
 
+            $food_data = Foods::find('first', array('conditions'=>array('_id'=>$serving_data['food_id'])));
+            
+            //Embeding food data into serving
+            $serving_data['food'] = $food_data;
+
             $session_data = Session::read();        
             $serving_data['user_id'] = $session_data['default']['_id'];   
             $serving_data['modified'] = $serving_data['created'] = date('H:i:s d-m-Y',time());
-
-            //$this->request->data->modified -> $this->request->data->created= time();
 
             $serving = Servings::create($serving_data);
             $success = $serving->save();

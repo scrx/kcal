@@ -167,7 +167,7 @@ class FoodController extends \lithium\action\Controller
     {
         $success = Foods::remove(array('_id'=>$id));
 
-        $this->redirect("Food::index");
+        $this->redirect('Food::index');
     }
     /**
      * Removing single food by given food id
@@ -193,6 +193,8 @@ class FoodController extends \lithium\action\Controller
         return compact('food');
 
     }
+
+
     public function view($id)
     {
         if (is_null($id)) {
@@ -203,4 +205,30 @@ class FoodController extends \lithium\action\Controller
 
         return compact('food');
     }
+
+    /**
+     * Forking food position
+     * @param  [type] $id existing food identigier
+     * @return creates new forked food position with edited data
+     */
+    public function fork($id)
+    {
+        if ($this->request->data) {
+            
+            //$food = Foods::find(array('_id'=>$this->request->data['_id']));
+            unset($this->request->data['_id']);
+            
+            $this->request->data['modified']=time();
+
+            $food = Foods::create($this->request->data);
+            $success = $food->save($this->request->data);
+
+            return $this->redirect('Food::index');
+        }
+
+        $food = Foods::find('first', array('conditions'=> array('_id'=>$id)));
+
+        return compact('food');
+
+    }    
 }
