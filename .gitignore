@@ -3,3 +3,6 @@ resources/tmp/cache/
 resources/tmp/cache/templates/
 .project
 app/.project
+app/resources/tmp/
+app/resources/tmp/cache/
+app/resources/tmp/cache/templates/
