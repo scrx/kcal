@@ -1,6 +1,0 @@
-    {
-        "minimum-stability": "dev",
-        "require": {
-            "djordje/li3_validators": "dev-master"
-        }
-    }

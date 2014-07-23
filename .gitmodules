@@ -1,3 +1,0 @@
-[submodule "app/libraries/li3_flash_message"]
-	path = app/libraries/li3_flash_message
-	url = https://github.com/michaelhue/li3_flash_message.git
