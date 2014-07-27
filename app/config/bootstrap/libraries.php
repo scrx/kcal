@@ -53,9 +53,6 @@
  */
 define('LITHIUM_APP_PATH', dirname(dirname(__DIR__)));
 
-//
-//die(LITHIUM_APP_PATH);
-
 /**
  * This is the path to the class libraries used by your application, and must contain a copy of the
  * Lithium core.  By default, this directory is named `libraries`, and resides in the same
@@ -63,12 +60,7 @@ define('LITHIUM_APP_PATH', dirname(dirname(__DIR__)));
  * set this to a shared path on your server.
  */
 
-define('LITHIUM_LIBRARY_PATH', '/home/scx/www/kcal');
-//die(LITHIUM_LIBRARY_PATH);
-//exit();
-//define('LITHIUM_LIBRARY_PATH', '/home/zoltax/pr/');
-//define('LITHIUM_LIBRARY_PATH', dirname(__DIR__) . '/libraries');
-
+define('LITHIUM_LIBRARY_PATH', LITHIUM_APP_PATH . '/libraries/unionofrad/lithium');
 
 /**
  * Locate and load Lithium core library files.  Throws a fatal error if the core can't be found.

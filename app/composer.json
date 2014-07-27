@@ -1,7 +1,15 @@
     {
+		"name": "kcal",
+		 
+		"config": {
+		    "vendor-dir": "libraries"
+		},
+
+
         "minimum-stability": "dev",
         "require": {
             "djordje/li3_validators": "dev-master",
-            "michaelhue/li3_flash_message": "dev-master"
+            "michaelhue/li3_flash_message": "dev-master",
+            "unionofrad/lithium": "master"
         }
     }
